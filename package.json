@@ -1,5 +1,5 @@
 {
-  "name": "@shakuro/eslint-config-react",
+  "name": "@shakuroinc/eslint-config-react",
   "version": "1.0.0",
   "main": ".eslintrc.js",
   "author": "Shakuro team",
@@ -19,7 +19,8 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "prettier-plugin-tailwind": "^2.2.8"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.9.1",
@@ -31,7 +32,8 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "prettier-plugin-tailwind": "^2.2.8"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint"
