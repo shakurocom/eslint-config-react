@@ -117,4 +117,34 @@ module.exports = {
     ],
     'simple-import-sort/exports': 1,
   },
+
+  overrides: [
+    {
+      files: ['*.md'],
+      extends: ['plugin:mdx/overrides'],
+      rules: {
+        '@typescript-eslint/naming-convention': 0,
+        'prettier/prettier': [
+          2,
+          {
+            parser: 'markdown',
+          },
+        ],
+      },
+    },
+    {
+      files: ['*.mdx'],
+      extends: ['plugin:mdx/overrides'],
+      rules: {
+        '@typescript-eslint/naming-convention': 0,
+      },
+    },
+    {
+      files: '**/*.{md,mdx}/**',
+      extends: ['plugin:mdx/code-blocks', 'plugin:mdx/recommended'],
+      rules: {
+        '@typescript-eslint/naming-convention': 0,
+      },
+    },
+  ],
 };
