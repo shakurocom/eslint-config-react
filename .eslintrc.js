@@ -69,7 +69,7 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
-    curly: ['error', 'multi-or-nest'],
+    curly: ['error', 'multi-line'],
     'no-duplicate-imports': 2,
     'react-hooks/exhaustive-deps': 2,
     'react-hooks/rules-of-hooks': 2,
