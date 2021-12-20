@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
 
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'simple-import-sort'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'simple-import-sort', 'tailwindcss'],
 
   extends: [
     'plugin:@typescript-eslint/recommended',
@@ -70,17 +70,17 @@ module.exports = {
       },
     ],
     curly: ['error', 'multi-line'],
+    'import/order': 0,
     'no-duplicate-imports': 2,
     'react-hooks/exhaustive-deps': 2,
     'react-hooks/rules-of-hooks': 2,
+    'react/button-has-type': 2,
     'react/display-name': 0,
     'react/no-unescaped-entities': 0,
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 0,
     'react/self-closing-comp': 1,
-    'import/order': 0,
     'sort-imports': 0,
-    'react/button-has-type': 2,
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
@@ -117,6 +117,9 @@ module.exports = {
       },
     ],
     'simple-import-sort/exports': 1,
+    'tailwindcss/classnames-order': 2,
+    'tailwindcss/no-contradicting-classname': 2,
+    'tailwindcss/no-custom-classname': 1,
   },
 
   overrides: [
