@@ -128,6 +128,7 @@ module.exports = {
       extends: ['plugin:mdx/overrides'],
       rules: {
         '@typescript-eslint/naming-convention': 0,
+        'max-lines': 0,
         'prettier/prettier': [
           2,
           {
@@ -141,6 +142,7 @@ module.exports = {
       extends: ['plugin:mdx/overrides'],
       rules: {
         '@typescript-eslint/naming-convention': 0,
+        'max-lines': 0,
       },
     },
     {
@@ -148,6 +150,7 @@ module.exports = {
       extends: ['plugin:mdx/code-blocks', 'plugin:mdx/recommended'],
       rules: {
         '@typescript-eslint/naming-convention': 0,
+        'max-lines': 0,
       },
     },
   ],
