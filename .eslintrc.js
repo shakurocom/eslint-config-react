@@ -22,6 +22,9 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    tailwindcss: {
+      officialSorting: true,
+    },
   },
 
   rules: {
