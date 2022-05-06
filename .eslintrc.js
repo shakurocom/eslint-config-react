@@ -75,6 +75,30 @@ module.exports = {
     curly: ['error', 'multi-line'],
     'import/order': 0,
     'no-duplicate-imports': 2,
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: ['ui'],
+        patterns: [
+          {
+            group: ['@sh/app', '@sh/app/*'],
+            message: 'Importing from `app` package is disallowed for architecture reasons',
+          },
+        ],
+      },
+    ],
+    'import/no-restricted-paths': [
+      'error',
+      {
+        zones: [
+          {
+            target: 'ui',
+            from: 'app',
+            message: 'Importing from `app` package is disallowed for architecture reasons',
+          },
+        ],
+      },
+    ],
     'react-hooks/exhaustive-deps': 2,
     'react-hooks/rules-of-hooks': 2,
     'react/button-has-type': 2,
