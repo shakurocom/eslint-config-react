@@ -1,7 +1,12 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'simple-import-sort', 'tailwindcss'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+    'simple-import-sort',
+    'tailwindcss',
+  ],
 
   extends: [
     'plugin:@typescript-eslint/recommended',
@@ -11,7 +16,7 @@ module.exports = {
   ],
 
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -151,33 +156,17 @@ module.exports = {
 
   overrides: [
     {
-      files: ['*.md'],
-      extends: ['plugin:mdx/overrides'],
-      rules: {
-        '@typescript-eslint/naming-convention': 0,
-        'max-lines': 0,
-        'prettier/prettier': [
-          2,
-          {
-            parser: 'markdown',
-          },
-        ],
+      files: ['*.mdx', '*.md'],
+      extends: 'plugin:mdx/recommended',
+      parserOptions: {
+        ecmaVersion: 'latest',
       },
-    },
-    {
-      files: ['*.mdx'],
-      extends: ['plugin:mdx/overrides'],
       rules: {
+        '@next/next/no-img-element': 0,
         '@typescript-eslint/naming-convention': 0,
         'max-lines': 0,
-      },
-    },
-    {
-      files: '**/*.{md,mdx}/**',
-      extends: ['plugin:mdx/code-blocks', 'plugin:mdx/recommended'],
-      rules: {
-        '@typescript-eslint/naming-convention': 0,
-        'max-lines': 0,
+        'no-unused-expressions': 0,
+        'react/self-closing-comp': 0,
       },
     },
   ],
