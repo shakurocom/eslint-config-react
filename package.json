@@ -1,6 +1,6 @@
 {
   "name": "@shakuroinc/eslint-config-react",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "main": ".eslintrc.js",
   "author": "Shakuro team",
   "license": "MIT",
