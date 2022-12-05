@@ -1,19 +1,28 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 module.exports = {
-  plugins: ['react', 'react-hooks', 'jsx-a11y', 'tailwindcss'],
+  parser: '@typescript-eslint/parser',
+
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+    'simple-import-sort',
+    'tailwindcss',
+  ],
 
   extends: [
-    '@shakuroinc/eslint-config-base',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
   ],
 
-  settings: {
-    react: {
-      version: 'detect',
-    },
-    tailwindcss: {
-      officialSorting: true,
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
     },
   },
 
