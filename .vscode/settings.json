@@ -1,0 +1,42 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": [
+    "markdown",
+    "mdx",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.options": {
+    "extensions": [".mdx", ".js", ".jsx", ".ts", ".tsx"]
+  },
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "eslint.autoFixOnSave": true,
+    "source.fixAll.eslint": true
+  },
+  "window.title": "@shakuroinc/eslint-config-react | ${activeEditorShort}${separator}${rootName}",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": [
+    "ClassName='([^']*)", // prefixClassName='...'
+    "ClassName=\"([^']*)", // prefixClassName="..."
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"] // clsx(...)
+  ],
+  "cSpell.words": [
+    "clsx",
+    "shakuroinc"
+  ]
+}
