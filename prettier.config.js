@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const baseConfig = require('@shakuroinc/eslint-config-base/prettier.config');
-
 module.exports = {
-  ...baseConfig,
-  plugins: [...(baseConfig.plugins ?? []), require('prettier-plugin-tailwindcss')],
+  arrowParens: 'avoid',
+  bracketSpacing: true,
+  plugins: [require('prettier-plugin-tailwindcss')],
+  printWidth: 100,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
 };

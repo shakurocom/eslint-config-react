@@ -133,11 +133,6 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@shakuroinc/eslint-config-base@^1.0.2":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@shakuroinc/eslint-config-base/-/eslint-config-base-1.0.3.tgz#da79fa9008e7497e2557341bf24d90c76b599306"
-  integrity sha512-OHCQn6eNc1c0sUfekKpkGc/JAfwk4luEyJRYj5f26KRqObdwPgjAlyvcXBh3iDNScgKD4+nB0aHUmzVdntDa+g==
-
 "@types/acorn@^4.0.0":
   version "4.0.6"
   resolved "https://registry.npmjs.org/@types/acorn/-/acorn-4.0.6.tgz#d61ca5480300ac41a7d973dd5b84d0a591154a22"
