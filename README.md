@@ -1,6 +1,6 @@
 # @shakuroinc/eslint-config-react
 
-[Shakuro](https://shakuro.com/) eslint and prettier extensible basic config.
+[Shakuro](https://shakuro.com/) eslint (with React and tailwindcss support) and prettier extensible basic config.
 
 ## Usage
 
