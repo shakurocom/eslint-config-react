@@ -13,8 +13,6 @@ module.exports = {
 
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
@@ -140,7 +138,6 @@ module.exports = {
       },
     ],
     curly: ['error', 'multi-line'],
-    'import/order': 0,
     'no-duplicate-imports': 2,
     'no-restricted-imports': [
       'error',
@@ -149,18 +146,6 @@ module.exports = {
         patterns: [
           {
             group: ['@sh/app', '@sh/app/*'],
-            message: 'Importing from `app` package is disallowed for architecture reasons',
-          },
-        ],
-      },
-    ],
-    'import/no-restricted-paths': [
-      'error',
-      {
-        zones: [
-          {
-            target: 'ui',
-            from: 'app',
             message: 'Importing from `app` package is disallowed for architecture reasons',
           },
         ],
@@ -217,6 +202,25 @@ module.exports = {
   },
 
   overrides: [
+    {
+      files: ['*js?x', '*ts?x'],
+      extends: ['plugin:import/recommended', 'plugin:import/typescript'],
+      rules: {
+        'import/order': 0,
+        'import/no-restricted-paths': [
+          'error',
+          {
+            zones: [
+              {
+                target: 'ui',
+                from: 'app',
+                message: 'Importing from `app` package is disallowed for architecture reasons',
+              },
+            ],
+          },
+        ],
+      },
+    },
     {
       files: ['*.mdx', '*.md'],
       extends: 'plugin:mdx/recommended',
