@@ -38,14 +38,14 @@ module.exports = {
       {
         selector: 'default',
         format: ['PascalCase', 'camelCase'],
-        leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: ['variable', 'property'],
         format: ['PascalCase', 'camelCase', 'UPPER_CASE'],
-        leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'typeLike',
