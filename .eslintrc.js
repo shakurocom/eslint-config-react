@@ -205,6 +205,7 @@ module.exports = {
     'tailwindcss/classnames-order': 2,
     'tailwindcss/no-contradicting-classname': 2,
     'tailwindcss/no-custom-classname': 1,
+    quotes: ['error', 'single', { allowTemplateLiterals: false, avoidEscape: true }],
   },
 
   overrides: [
