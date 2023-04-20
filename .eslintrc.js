@@ -1,3 +1,4 @@
+// @ts-check
 /* eslint-disable @typescript-eslint/naming-convention */
 module.exports = {
   parser: '@typescript-eslint/parser',
@@ -195,7 +196,7 @@ module.exports = {
           ['^\\u0000'],
           ['^react', '^next', '^[^.]'],
           ['^@shakuroinc/', '^@sh/'],
-          ['^libs$', '^libs/', '^features/'],
+          ['^@/', '^~/', '^#/', '^libs$', '^libs/', '^features/'],
           ['^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
           ['^.+\\.s?css$'],
         ],
