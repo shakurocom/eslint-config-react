@@ -20,7 +20,7 @@ module.exports = {
   ],
 
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -37,11 +37,11 @@ module.exports = {
   },
 
   rules: {
-    '@typescript-eslint/ban-ts-ignore': 0,
-    '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/explicit-member-accessibility': 0,
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/interface-name-prefix': 0,
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/naming-convention': [
       'error',
       {
@@ -60,7 +60,7 @@ module.exports = {
         selector: ['default', 'variable', 'property'],
         format: null,
         leadingUnderscore: 'allow',
-        filter: '^_$',
+        filter: '^[_]*$',
       },
       {
         selector: 'typeLike',
@@ -76,9 +76,11 @@ module.exports = {
         filter: '^__html$',
       },
     ],
-    '@typescript-eslint/no-empty-function': 0,
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-object-literal-type-assertion': 0,
+    '@typescript-eslint/no-empty-function': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn', { 'argsIgnorePattern': '^[_]*$' }],
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-object-literal-type-assertion': 'off',
     '@typescript-eslint/padding-line-between-statements': [
       'error',
       {
@@ -145,7 +147,7 @@ module.exports = {
       },
     ],
     curly: ['error', 'multi-line'],
-    'no-duplicate-imports': 2,
+    'no-duplicate-imports': 'error',
     'no-restricted-imports': [
       'error',
       {
@@ -158,15 +160,15 @@ module.exports = {
         ],
       },
     ],
-    'react-hooks/exhaustive-deps': 2,
-    'react-hooks/rules-of-hooks': 2,
-    'react/button-has-type': 2,
-    'react/display-name': 0,
-    'react/no-unescaped-entities': 0,
-    'react/prop-types': 0,
-    'react/react-in-jsx-scope': 0,
-    'react/self-closing-comp': 1,
-    'sort-imports': 0,
+    'react-hooks/exhaustive-deps': 'error',
+    'react-hooks/rules-of-hooks': 'error',
+    'react/button-has-type': 'error',
+    'react/display-name': 'off',
+    'react/no-unescaped-entities': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': 'warn',
+    'sort-imports': 'off',
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
@@ -202,10 +204,10 @@ module.exports = {
         ],
       },
     ],
-    'simple-import-sort/exports': 1,
-    'tailwindcss/classnames-order': 2,
-    'tailwindcss/no-contradicting-classname': 2,
-    'tailwindcss/no-custom-classname': 1,
+    'simple-import-sort/exports': 'warn',
+    'tailwindcss/classnames-order': 'error',
+    'tailwindcss/no-contradicting-classname': 'error',
+    'tailwindcss/no-custom-classname': 'warn',
     quotes: ['error', 'single', { allowTemplateLiterals: false, avoidEscape: true }],
   },
 
@@ -214,7 +216,7 @@ module.exports = {
       files: ['*js?x', '*ts?x'],
       extends: ['plugin:import/recommended', 'plugin:import/typescript'],
       rules: {
-        'import/order': 0,
+        'import/order': 'off',
         'import/no-restricted-paths': [
           'error',
           {
@@ -236,11 +238,11 @@ module.exports = {
         ecmaVersion: 'latest',
       },
       rules: {
-        '@next/next/no-img-element': 0,
-        '@typescript-eslint/naming-convention': 0,
-        'max-lines': 0,
-        'no-unused-expressions': 0,
-        'react/self-closing-comp': 0,
+        '@next/next/no-img-element': 'off',
+        '@typescript-eslint/naming-convention': 'off',
+        'max-lines': 'off',
+        'no-unused-expressions': 'off',
+        'react/self-closing-comp': 'off',
       },
     },
   ],
