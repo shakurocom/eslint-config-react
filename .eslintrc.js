@@ -137,6 +137,7 @@ module.exports = {
         ],
         next: 'export',
       },
+      { blankLine: 'always', prev: 'directive', next: '*' },
     ],
     'jsx-a11y/anchor-is-valid': [
       'error',
@@ -169,10 +170,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/self-closing-comp': 'warn',
     'sort-imports': 'off',
-    'react/function-component-definition': [
-      2,
-      { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
-    ],
+    'react/function-component-definition': "off",
     'react/jsx-curly-brace-presence': [
       2,
       {
@@ -184,7 +182,6 @@ module.exports = {
       2,
       { ignoreCase: true, callbacksLast: true, shorthandLast: false, reservedFirst: true },
     ],
-    'no-console': 'error',
     'max-lines': [
       'error',
       {
@@ -192,6 +189,7 @@ module.exports = {
         skipComments: true,
       },
     ],
+    'no-console': 'error',
     'simple-import-sort/imports': [
       1,
       {
