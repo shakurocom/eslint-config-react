@@ -184,6 +184,7 @@ module.exports = {
       2,
       { ignoreCase: true, callbacksLast: true, shorthandLast: false, reservedFirst: true },
     ],
+    'no-console': 'error',
     'max-lines': [
       'error',
       {
