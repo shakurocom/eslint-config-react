@@ -239,6 +239,7 @@ module.exports = {
       rules: {
         '@next/next/no-img-element': 'off',
         '@typescript-eslint/naming-convention': 'off',
+        '@typescript-eslint/padding-line-between-statements': 'off',
         'max-lines': 'off',
         'no-unused-expressions': 'off',
         'react/self-closing-comp': 'off',
