@@ -51,8 +51,14 @@ module.exports = {
         trailingUnderscore: 'forbid',
       },
       {
-        selector: ['variable', 'property'],
+        selector: ['variable'],
         format: ['PascalCase', 'camelCase', 'UPPER_CASE'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: ['property'],
+        format: null,
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },
