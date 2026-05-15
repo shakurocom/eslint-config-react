@@ -1,5 +1,6 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.useFlatConfig": true,
   "eslint.validate": [
     "markdown",
     "mdx",
@@ -8,35 +9,35 @@
     "typescript",
     "typescriptreact"
   ],
-  "eslint.options": {
-    "extensions": [".mdx", ".js", ".jsx", ".ts", ".tsx"]
-  },
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
-    "editor.formatOnSave": false
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.formatOnSave": false
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.formatOnSave": false
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.codeActionsOnSave": {
-    "eslint.autoFixOnSave": true,
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "window.title": "@shakuroinc/eslint-config-react | ${activeEditorShort}${separator}${rootName}",
   "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.experimental.classRegex": [
-    "ClassName='([^']*)", // prefixClassName='...'
-    "ClassName=\"([^']*)", // prefixClassName="..."
-    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"] // clsx(...)
-  ],
-  "cSpell.words": [
-    "clsx",
-    "shakuroinc"
-  ]
+  "tailwindCSS.classAttributes": ["className", "[A-z]*ClassName", "classNames"],
+  "tailwindCSS.classFunctions": ["clsx", "cva", "cn"],
+  "cSpell.words": ["clsx", "shakuroinc", "shakuro"],
+  "claudeCode.initialPermissionMode": "default",
+  "claudeCode.allowDangerouslySkipPermissions": true
 }
