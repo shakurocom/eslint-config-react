@@ -229,6 +229,10 @@ const sharedRules = {
 const mdxRuleOverrides = {
   '@next/next/no-img-element': 'off',
   '@typescript-eslint/naming-convention': 'off',
+  // MDX imports are often consumed by JSX in the document body
+  // (e.g. <Meta of={...} />), which the rule does not see.
+  '@typescript-eslint/no-unused-vars': 'off',
+  'no-unused-vars': 'off',
   'padding-line-between-statements': 'off',
   'max-lines': 'off',
   'no-unused-expressions': 'off',
