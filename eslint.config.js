@@ -60,7 +60,15 @@ const sharedRules = {
   '@typescript-eslint/explicit-module-boundary-types': 'off',
   '@typescript-eslint/no-empty-function': 'off',
   '@typescript-eslint/no-explicit-any': 'off',
-  '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^[_]*$' }],
+  '@typescript-eslint/no-unused-vars': [
+    'warn',
+    {
+      argsIgnorePattern: '^_',
+      caughtErrorsIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+      destructuredArrayIgnorePattern: '^_',
+    },
+  ],
   'no-unused-vars': 'off',
 
   // Naming conventions
@@ -89,6 +97,16 @@ const sharedRules = {
       format: null,
       leadingUnderscore: 'allow',
       filter: '^[_]*$',
+    },
+    // Allow leading underscore on parameters to mark them as intentionally
+    // unused — consistent with `argsIgnorePattern: '^_'` on no-unused-vars.
+    // Also covers placeholder names like `_`, `__`, `___` used to skip earlier
+    // positional args.
+    {
+      selector: 'parameter',
+      format: null,
+      leadingUnderscore: 'allow',
+      filter: '^[_]',
     },
     { selector: 'typeLike', format: ['PascalCase'] },
     {
@@ -198,6 +216,10 @@ const sharedRules = {
   // react-hooks (v7 introduces new rules; we enable the classic ones explicitly)
   'react-hooks/exhaustive-deps': 'error',
   'react-hooks/rules-of-hooks': 'error',
+  // Informational only — React Compiler flags components that touch libraries
+  // it cannot compile (react-hook-form, tanstack/react-table, tanstack/react-virtual…).
+  // The runtime behaviour is unaffected; turning it off until upstream libs gain support.
+  'react-hooks/incompatible-library': 'off',
 
   // simple-import-sort
   'simple-import-sort/exports': 'warn',
