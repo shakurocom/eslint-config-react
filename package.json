@@ -22,18 +22,20 @@
     "release": "git push origin master --tags && npm publish --access public --new-version"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0 || ^10.0.0",
-    "eslint-config-prettier": "^10.0.0",
-    "eslint-mdx": "^3.0.0",
-    "eslint-plugin-mdx": "^3.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-mdx": "^3.7.0",
+    "eslint-plugin-mdx": "^3.7.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-simple-import-sort": "^13.0.0",
-    "eslint-plugin-tailwindcss": "^4.0.0-beta.0",
-    "globals": "^15.0.0 || ^16.0.0 || ^17.0.0",
-    "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.6.0 || ^0.7.0 || ^0.8.0",
-    "typescript-eslint": "^8.0.0"
+    "eslint-plugin-tailwindcss": "^4.0.0-alpha.1",
+    "globals": "^16.5.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "react": "^19.2.6",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.3"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-mdx": {
@@ -47,14 +49,14 @@
     }
   },
   "devDependencies": {
-    "eslint": "^10.3.0",
+    "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-mdx": "^3.7.0",
     "eslint-plugin-mdx": "^3.7.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-simple-import-sort": "^13.0.0",
-    "eslint-plugin-tailwindcss": "4.0.0-beta.0",
+    "eslint-plugin-tailwindcss": "^4.0.0-alpha.1",
     "globals": "^16.5.0",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
