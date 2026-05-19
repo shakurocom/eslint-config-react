@@ -27,20 +27,16 @@ package.
 pnpm add -D \
   eslint \
   eslint-config-prettier \
+  eslint-mdx \
+  eslint-plugin-mdx \
   eslint-plugin-prettier \
   eslint-plugin-react-hooks \
   eslint-plugin-simple-import-sort \
-  eslint-plugin-tailwindcss@beta \
+  eslint-plugin-tailwindcss@v4.0.0-alpha.1 \
   globals \
   prettier \
   prettier-plugin-tailwindcss \
   typescript-eslint
-```
-
-Optional peers (only needed if you lint `.md` / `.mdx`):
-
-```sh
-pnpm add -D eslint-mdx eslint-plugin-mdx
 ```
 
 ## Configure ESLint
@@ -54,7 +50,7 @@ const { resolve } = require('node:path');
 const shakuroConfig = require('@shakuroinc/eslint-config-react');
 
 module.exports = shakuroConfig({
-  tailwindStylesheet: resolve(__dirname, 'src/styles/globals.css'),
+  tailwindStylesheet: resolve(__dirname, 'packages/ui/src/styles/globals.css'),
 });
 ```
 
@@ -64,22 +60,18 @@ module.exports = shakuroConfig({
 blocks. A typical Next.js setup looks like this:
 
 ```js
-// eslint.config.js
+/* eslint-disable @typescript-eslint/no-require-imports */
+// @ts-check
 const { resolve } = require('node:path');
-const shakuroConfig = require('@shakuroinc/eslint-config-react');
+
 const nextCoreWebVitals = require('eslint-config-next/core-web-vitals');
+const shakuroConfig = require('@shakuroinc/eslint-config-react');
 
 module.exports = [
   ...nextCoreWebVitals,
   ...shakuroConfig({
-    tailwindStylesheet: resolve(__dirname, 'src/styles/globals.css'),
-    tailwindCallees: ['cn', 'clsx', 'cva'],
-    next: { rootDir: 'apps/frontend/' },
+    tailwindStylesheet: resolve(__dirname, 'packages/ui/src/styles/globals.css'),
   }),
-  // Project-specific overrides — keep them after the shared config so they win.
-  {
-    rules: { 'max-lines': 'off' },
-  },
 ];
 ```
 
@@ -196,7 +188,7 @@ The base config sets:
 | `main: '.eslintrc.js'`                                             | `main: 'eslint.config.js'`, named export `./prettier`                                                                     |
 | ESLint ≥ 8.29                                                      | ESLint ≥ 9                                                                                                                |
 | `eslint-plugin-react@7.31.11`, `react-hooks@4`                     | `eslint-plugin-react@^7.37` (inherited from your config), `react-hooks@7`                                                 |
-| `tailwindcss@3.x` plugin, class-order on                           | `tailwindcss@4.x-beta` plugin, class-order off (Prettier handles it)                                                      |
+| `tailwindcss@3.x` plugin, class-order on                           | `tailwindcss@4.x-alpha` plugin, class-order off (Prettier handles it)                                                     |
 | `@typescript-eslint/padding-line-between-statements`               | Stock `padding-line-between-statements` (TS-only selectors dropped — install `@stylistic/eslint-plugin` if you need them) |
 | `prettier-plugin-tailwindcss@0.2`                                  | `prettier-plugin-tailwindcss@0.8` with `tailwindStylesheet` for v4                                                        |
 

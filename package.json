@@ -37,17 +37,6 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.3"
   },
-  "peerDependenciesMeta": {
-    "eslint-plugin-mdx": {
-      "optional": true
-    },
-    "eslint-mdx": {
-      "optional": true
-    },
-    "prettier-plugin-tailwindcss": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
