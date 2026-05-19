@@ -308,7 +308,7 @@ function shakuroConfig(options = {}) {
         ...(nextSettings ? { next: nextSettings } : {}),
         tailwindcss: {
           callees: tailwindCallees,
-          ...(tailwindStylesheet ? { config: tailwindStylesheet } : {}),
+          ...(tailwindStylesheet ? { cssConfigPath: tailwindStylesheet } : {}),
           officialSorting: true,
         },
       },
