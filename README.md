@@ -32,7 +32,7 @@ pnpm add -D \
   eslint-plugin-prettier \
   eslint-plugin-react-hooks \
   eslint-plugin-simple-import-sort \
-  eslint-plugin-tailwindcss@v4.0.0-alpha.1 \
+  eslint-plugin-tailwindcss@4.0.0-alpha.1 \
   globals \
   prettier \
   prettier-plugin-tailwindcss \
