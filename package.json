@@ -1,6 +1,6 @@
 {
   "name": "@shakuroinc/eslint-config-react",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "Shakuro shared ESLint + Prettier config (flat config, ESLint 9/10, React 19, Tailwind v4).",
   "main": "eslint.config.js",
   "exports": {
