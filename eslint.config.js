@@ -240,6 +240,7 @@ const sharedRules = {
   // tailwindcss
   // Class order is handled by prettier-plugin-tailwindcss.
   'tailwindcss/classnames-order': 'off',
+  'tailwindcss/no-contradicting-classname': 'warn',
   // Consumers override the whitelist via factory options.
   'tailwindcss/no-custom-classname': ['warn', { whitelist: DEFAULT_TAILWIND_WHITELIST }],
 
@@ -308,7 +309,7 @@ function shakuroConfig(options = {}) {
         ...(nextSettings ? { next: nextSettings } : {}),
         tailwindcss: {
           callees: tailwindCallees,
-          ...(tailwindStylesheet ? { cssConfigPath: tailwindStylesheet } : {}),
+          ...(tailwindStylesheet ? { config: tailwindStylesheet } : {}),
           officialSorting: true,
         },
       },

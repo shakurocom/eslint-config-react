@@ -32,7 +32,7 @@ pnpm add -D \
   eslint-plugin-prettier \
   eslint-plugin-react-hooks \
   eslint-plugin-simple-import-sort \
-  eslint-plugin-tailwindcss@4.0.0-alpha.1 \
+  eslint-plugin-tailwindcss@4.0.0-beta.0 \
   globals \
   prettier \
   prettier-plugin-tailwindcss \
@@ -188,7 +188,7 @@ The base config sets:
 | `main: '.eslintrc.js'`                                             | `main: 'eslint.config.js'`, named export `./prettier`                                                                     |
 | ESLint ≥ 8.29                                                      | ESLint ≥ 9                                                                                                                |
 | `eslint-plugin-react@7.31.11`, `react-hooks@4`                     | `eslint-plugin-react@^7.37` (inherited from your config), `react-hooks@7`                                                 |
-| `tailwindcss@3.x` plugin, class-order on                           | `tailwindcss@4.x-alpha` plugin, class-order off (Prettier handles it)                                                     |
+| `tailwindcss@3.x` plugin, class-order on                           | `tailwindcss@4.x` plugin, class-order off (Prettier handles it)                                                           |
 | `@typescript-eslint/padding-line-between-statements`               | Stock `padding-line-between-statements` (TS-only selectors dropped — install `@stylistic/eslint-plugin` if you need them) |
 | `prettier-plugin-tailwindcss@0.2`                                  | `prettier-plugin-tailwindcss@0.8` with `tailwindStylesheet` for v4                                                        |
 
