@@ -40,6 +40,8 @@ const DEFAULT_IGNORES = [
   '**/next-env.d.ts',
   '**/*.json.ts',
   '**/importMap.js',
+  '.claude/',
+  '.worktrees/'
 ];
 
 const DEFAULT_TAILWIND_CALLEES = ['cn', 'clsx', 'cva', 'tv'];
