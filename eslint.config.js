@@ -41,7 +41,7 @@ const DEFAULT_IGNORES = [
   '**/*.json.ts',
   '**/importMap.js',
   '.claude/',
-  '.worktrees/'
+  '.worktrees/',
 ];
 
 const DEFAULT_TAILWIND_CALLEES = ['cn', 'clsx', 'cva', 'tv'];
@@ -50,8 +50,23 @@ const DEFAULT_TAILWIND_WHITELIST = [
   'pf-.*',
   'g-recaptcha',
   'cn-input-otp',
-  '-?translate-x-\\[[-]?50%\\]',
+  // Whitelist entries are matched against the *whole* class, variants
+  // included, so the leading `(.*:)?` is what lets this survive a chain like
+  // `rtl:data-ending-style:data-activation-direction=left:-translate-x-[50%]`.
+  // Those chains are valid Tailwind v4 that the plugin cannot resolve.
+  '(.*:)?-?translate-x-\\[[-]?50%\\]',
 ];
+
+/**
+ * Functions whose *object keys* hold class names, as in `clsx({ flex: cond })`.
+ *
+ * Empty on purpose. Every function listed here also has its plain identifier
+ * arguments read as class names by eslint-plugin-tailwindcss >=4.4.0, so
+ * `clsx('flex', className)` reports `className` itself as a custom class. Until
+ * that is fixed upstream, the object-key form goes unchecked, which is
+ * the far smaller loss of the two.
+ */
+const DEFAULT_TAILWIND_PARSE_KEY_FUNCTIONS = [];
 
 /** Shared lint rules (TypeScript + React + a11y + tailwind + prettier). */
 const sharedRules = {
@@ -270,6 +285,8 @@ const mdxRuleOverrides = {
  * @param {string} [options.tailwindStylesheet]  Path to the Tailwind CSS entry file (Tailwind v4).
  * @param {string[]} [options.tailwindCallees]   Function names that accept Tailwind class strings.
  * @param {string[]} [options.tailwindWhitelist] Patterns to whitelist for `no-custom-classname`.
+ * @param {string[]} [options.tailwindParseKeyFunctions] Functions whose object *keys* are class
+ *   names (`clsx({ flex: cond })`). Empty by default; see the constant for why.
  * @param {string[]} [options.ignores]           Extra ignore patterns appended to the defaults.
  * @param {string}   [options.reactVersion]      Pinned React version for `eslint-plugin-react`.
  * @param {{ rootDir?: string }} [options.next]  Settings forwarded to `eslint-plugin-next`.
@@ -280,6 +297,7 @@ function shakuroConfig(options = {}) {
     tailwindStylesheet,
     tailwindCallees = DEFAULT_TAILWIND_CALLEES,
     tailwindWhitelist = DEFAULT_TAILWIND_WHITELIST,
+    tailwindParseKeyFunctions = DEFAULT_TAILWIND_PARSE_KEY_FUNCTIONS,
     ignores = [],
     reactVersion = '19.0',
     next: nextSettings,
@@ -310,8 +328,21 @@ function shakuroConfig(options = {}) {
         react: { version: reactVersion },
         ...(nextSettings ? { next: nextSettings } : {}),
         tailwindcss: {
+          // `callees` was renamed to `functions` in 4.4.0. Both are emitted for
+          // the same reason as the stylesheet path below: the version that does
+          // not know a key ignores it.
           callees: tailwindCallees,
-          ...(tailwindStylesheet ? { config: tailwindStylesheet } : {}),
+          functions: tailwindCallees,
+          parseKeyFunctions: tailwindParseKeyFunctions,
+          // The plugin renamed this setting across v4 releases: 4.0.0-beta.0
+          // reads `config`, while 4.0.0-alpha.2 and >=4.4.0 read
+          // `cssConfigPath`. A key the installed version does not know is
+          // ignored, but a *missing* one is not a no-op: the plugin falls back to
+          // a default stylesheet path and dies with ENOENT, taking the whole
+          // lint run with it. Emitting both keeps every v4 release working.
+          ...(tailwindStylesheet
+            ? { config: tailwindStylesheet, cssConfigPath: tailwindStylesheet }
+            : {}),
           officialSorting: true,
         },
       },
